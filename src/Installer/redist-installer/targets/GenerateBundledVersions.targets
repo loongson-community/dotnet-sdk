@@ -81,7 +81,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-      <_NETCoreAppPackageVersion>$(MicrosoftNETCoreAppRuntimePackageVersion)</_NETCoreAppPackageVersion>
+      <_NETCoreAppPackageVersion>$(DotnetUnofficialBuildPackageVersion)</_NETCoreAppPackageVersion>
       <_NETStandardLibraryPackageVersion>$(NETStandardLibraryRefPackageVersion)</_NETStandardLibraryPackageVersion>
       <_NETCorePlatformsPackageVersion>$(MicrosoftNETCorePlatformsPackageVersion)</_NETCorePlatformsPackageVersion>
 
@@ -402,6 +402,7 @@
         linux-x64;
         linux-arm;
         linux-arm64;
+        linux-loongarch64;
         linux-bionic-arm;
         linux-musl-x64;
         linux-musl-arm;

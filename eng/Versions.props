@@ -120,6 +120,8 @@
     <MicrosoftDotNetTestProjectTemplates90PackageVersion>1.1.0-rc.24409.1</MicrosoftDotNetTestProjectTemplates90PackageVersion>
   </PropertyGroup>
   <PropertyGroup>
+    <!-- XXX: reference the dev builds built locally -->
+    <DotnetUnofficialBuildPackageVersion>9.0.0-dev</DotnetUnofficialBuildPackageVersion>
     <!-- Dependencies from https://github.com/dotnet/runtime -->
     <MicrosoftNETCoreAppRefPackageVersion>9.0.0-rc.1.24431.7</MicrosoftNETCoreAppRefPackageVersion>
     <VSRedistCommonNetCoreSharedFrameworkx6490PackageVersion>9.0.0-rc.1.24431.7</VSRedistCommonNetCoreSharedFrameworkx6490PackageVersion>

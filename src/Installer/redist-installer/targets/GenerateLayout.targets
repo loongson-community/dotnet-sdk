@@ -155,14 +155,14 @@
 
       <BundledLayoutPackage Include="MicrosoftAspNetCoreAppTargetingPackNupkg">
         <PackageName>Microsoft.AspNetCore.App.Ref</PackageName>
-        <PackageVersion>$(MicrosoftAspNetCoreAppRefPackageVersion)</PackageVersion>
+        <PackageVersion>$(DotnetUnofficialBuildPackageVersion)</PackageVersion>
         <TargetFramework>$(TargetFramework)</TargetFramework>
         <RelativeLayoutPath>packs/%(PackageName)/%(PackageVersion)</RelativeLayoutPath>
       </BundledLayoutPackage>
 
       <BundledLayoutPackage Include="MicrosoftNetCoreAppHostPackNupkg">
         <PackageName>Microsoft.NETCore.App.Host.$(SharedFrameworkRid)</PackageName>
-        <PackageVersion>$(MicrosoftNETCoreAppHostPackageVersion)</PackageVersion>
+        <PackageVersion>$(DotnetUnofficialBuildPackageVersion)</PackageVersion>
         <TargetFramework>$(TargetFramework)</TargetFramework>
         <RelativeLayoutPath>packs/%(PackageName)/%(PackageVersion)</RelativeLayoutPath>
       </BundledLayoutPackage>
@@ -190,14 +190,14 @@
 
       <BundledLayoutPackage Include="MicrosoftNetCoreAppRuntimePackNupkg" Condition="'$(BundleRuntimePacks)' == 'true'">
         <PackageName>Microsoft.NETCore.App.Runtime.$(SharedFrameworkRid)</PackageName>
-        <PackageVersion>$(MicrosoftNETCoreAppRuntimePackageVersion)</PackageVersion>
+        <PackageVersion>$(DotnetUnofficialBuildPackageVersion)</PackageVersion>
         <TargetFramework>$(TargetFramework)</TargetFramework>
         <RelativeLayoutPath>packs/%(PackageName)/%(PackageVersion)</RelativeLayoutPath>
       </BundledLayoutPackage>
 
       <BundledLayoutPackage Include="MicrosoftAspNetCoreAppRuntimePackNupkg" Condition="'$(BundleRuntimePacks)' == 'true'">
         <PackageName>Microsoft.AspNetCore.App.Runtime.$(SharedFrameworkRid)</PackageName>
-        <PackageVersion>$(MicrosoftAspNetCoreAppRuntimePackageVersion)</PackageVersion>
+        <PackageVersion>$(DotnetUnofficialBuildPackageVersion)</PackageVersion>
         <TargetFramework>$(TargetFramework)</TargetFramework>
         <RelativeLayoutPath>packs/%(PackageName)/%(PackageVersion)</RelativeLayoutPath>
       </BundledLayoutPackage>
@@ -506,8 +506,8 @@
     <!-- Update runtimeconfig files for tools in the SDK to pin the shared frameworks to the one carried by this installer. -->
     <UpdateRuntimeConfig
       RuntimeConfigPaths="@(ToolRuntimeConfigPath)"
-      MicrosoftNetCoreAppVersion="$(MicrosoftNETCoreAppRuntimePackageVersion)"
-      MicrosoftAspNetCoreAppVersion="$(MicrosoftAspNetCoreAppRuntimePackageVersion)" />
+      MicrosoftNetCoreAppVersion="$(DotnetUnofficialBuildPackageVersion)"
+      MicrosoftAspNetCoreAppVersion="$(DotnetUnofficialBuildPackageVersion)" />
   </Target>
 
   <Target Name="GenerateVersionFile"
@@ -558,7 +558,7 @@
       <AppHostTemplateDownloadPackageProject Include="$(MSBuildThisFileDirectory)..\projects\DownloadPackage.csproj">
         <Properties>
           PackageToRestore=$(NETCoreAppHostPackageName);
-          PackageVersionToRestore=$(MicrosoftNETCoreAppHostPackageVersion);
+          PackageVersionToRestore=$(DotnetUnofficialBuildPackageVersion);
           TargetFramework=$(TargetFramework);
           RestorePackagesPath=$(AppHostRestorePath);
           RuntimeIdentifier=$(Rid)
